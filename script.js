@@ -105,9 +105,9 @@ forward.addEventListener('click',function(){
 
 audioElement.addEventListener('ended',function(){
     if(lb === 1){
-        audioElement.src = songs[songid]['filepath'];
+        playmusic(next_and_prev);
     }
-    if(next_and_prev + 1 > no_of_songs - 1){
+    else if(next_and_prev + 1 > no_of_songs - 1){
         next_and_prev = 0;
         playmusic(next_and_prev);
     }
