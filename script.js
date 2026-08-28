@@ -6,6 +6,9 @@ let backward = document.getElementById('backward');
 let forward = document.getElementById('forward');
 let next_and_prev = 0;
 let for_gif = document.getElementById('gif');
+let loop_button = document.getElementById('loop');
+let lb = 0;
+let n = -1;
 
 
 songs = [
@@ -101,6 +104,9 @@ forward.addEventListener('click',function(){
 });
 
 audioElement.addEventListener('ended',function(){
+    if(lb === 1){
+        audioElement.src = songs[songid]['filepath'];
+    }
     if(next_and_prev + 1 > no_of_songs - 1){
         next_and_prev = 0;
         playmusic(next_and_prev);
@@ -111,6 +117,18 @@ audioElement.addEventListener('ended',function(){
     }
 })
 
+loop_button.addEventListener('click',function(){
+    lb = lb + (n * -1);
+    n = n * -1;
+    if(lb === 1){
+        loop_button.classList.remove('fa-repeat');
+        loop_button.classList.add('fa-infinity');
+    }
+    else{
+        loop_button.classList.remove('fa-infinity');
+        loop_button.classList.add('fa-repeat');
+    }
+});
 
 masterplay.addEventListener('click',function(){
     if(audioElement.paused || audioElement.currentTime<=0){
