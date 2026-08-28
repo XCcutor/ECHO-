@@ -30,6 +30,7 @@ nav ul {
 
 nav ul li {
     padding: 0 12px;
+    cursor: pointer;
 }
 
 .brand img {
@@ -45,6 +46,7 @@ nav ul li {
 }
 
 .container {
+    position: relative;
     height: calc(100vh - 65px - 130px);
     box-sizing: border-box;
     background-color: black;
@@ -122,6 +124,10 @@ nav ul li {
     margin-right: 12px;
 }
 
+.SongItemContainer {
+    margin-top: 50px;
+}
+
 .playing {
     position: fixed;
     bottom: 135px;
@@ -130,6 +136,9 @@ nav ul li {
     z-index: 11;
 }
 
+.playing b{
+    color: darkgrey;
+}
 .playing img {
     width: 140px;
     height: 40px;
@@ -159,3 +168,109 @@ nav ul li {
     }
 }
 
+.aboutpage {
+    width: 100%;
+    height: calc(100vh - 65px - 130px);
+    background-image: url('nl.jpg');
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-start;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: large;
+}
+
+.aboutpage p {
+    padding-left: 65px;
+    padding-right: 65px;
+}
+
+.artistspage {
+    width: 100%;
+    height: calc(100vh - 65px - 130px);
+    background-image: url('artistbg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+
+    gap: 30px;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+#backToArtists {
+    position: absolute;
+    left: 40px;
+    top: 25px;
+
+    width: 170px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#backToArtists:hover {
+    transform: scale(1.05);
+    background: white;
+}
+
+.artistspage h1 {
+    width: 100%;
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 42px;
+}
+
+.artistspage button {
+    width: 230px;
+    height: 260px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: black;
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.artistspage button:hover {
+    transform: scale(1.05);
+    background: white;
+}
+
+.artistspage button img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.active {
+    text-decoration: underline;
+}
